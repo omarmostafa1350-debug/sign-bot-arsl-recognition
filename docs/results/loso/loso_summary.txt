@@ -1,0 +1,9 @@
+LOSO Cross-Validation Summary
+
+Fold 1 (Test Signer 01): Acc=0.3596  Loss=5.7041
+Fold 2 (Test Signer 02): Acc=0.3287  Loss=7.6121
+Fold 3 (Test Signer 03): Acc=0.3949  Loss=5.0993
+
+Mean Accuracy : 0.3611
+Std Deviation : 0.0270
+Report value  : 36.11% +/- 2.70%

@@ -1,0 +1,502 @@
+{
+  "0001": {
+    "id": 1,
+    "arabic": "0",
+    "english": "0"
+  },
+  "0002": {
+    "id": 2,
+    "arabic": "1",
+    "english": "1"
+  },
+  "0003": {
+    "id": 3,
+    "arabic": "2",
+    "english": "2"
+  },
+  "0004": {
+    "id": 4,
+    "arabic": "3",
+    "english": "3"
+  },
+  "0005": {
+    "id": 5,
+    "arabic": "4",
+    "english": "4"
+  },
+  "0006": {
+    "id": 6,
+    "arabic": "5",
+    "english": "5"
+  },
+  "0007": {
+    "id": 7,
+    "arabic": "6",
+    "english": "6"
+  },
+  "0008": {
+    "id": 8,
+    "arabic": "7",
+    "english": "7"
+  },
+  "0009": {
+    "id": 9,
+    "arabic": "8",
+    "english": "8"
+  },
+  "0010": {
+    "id": 10,
+    "arabic": "9",
+    "english": "9"
+  },
+  "0011": {
+    "id": 11,
+    "arabic": "10",
+    "english": "10"
+  },
+  "0012": {
+    "id": 12,
+    "arabic": "20",
+    "english": "20"
+  },
+  "0013": {
+    "id": 13,
+    "arabic": "30",
+    "english": "30"
+  },
+  "0014": {
+    "id": 14,
+    "arabic": "40",
+    "english": "40"
+  },
+  "0015": {
+    "id": 15,
+    "arabic": "50",
+    "english": "50"
+  },
+  "0016": {
+    "id": 16,
+    "arabic": "60",
+    "english": "60"
+  },
+  "0017": {
+    "id": 17,
+    "arabic": "70",
+    "english": "70"
+  },
+  "0018": {
+    "id": 18,
+    "arabic": "80",
+    "english": "80"
+  },
+  "0019": {
+    "id": 19,
+    "arabic": "90",
+    "english": "90"
+  },
+  "0020": {
+    "id": 20,
+    "arabic": "100",
+    "english": "100"
+  },
+  "0021": {
+    "id": 21,
+    "arabic": "200",
+    "english": "200"
+  },
+  "0022": {
+    "id": 22,
+    "arabic": "300",
+    "english": "300"
+  },
+  "0023": {
+    "id": 23,
+    "arabic": "400",
+    "english": "400"
+  },
+  "0024": {
+    "id": 24,
+    "arabic": "500",
+    "english": "500"
+  },
+  "0025": {
+    "id": 25,
+    "arabic": "600",
+    "english": "600"
+  },
+  "0026": {
+    "id": 26,
+    "arabic": "700",
+    "english": "700"
+  },
+  "0027": {
+    "id": 27,
+    "arabic": "800",
+    "english": "800"
+  },
+  "0028": {
+    "id": 28,
+    "arabic": "900",
+    "english": "900"
+  },
+  "0029": {
+    "id": 29,
+    "arabic": "1000",
+    "english": "1000"
+  },
+  "0030": {
+    "id": 30,
+    "arabic": "1000000",
+    "english": "1000000"
+  },
+  "0031": {
+    "id": 31,
+    "arabic": "10000000",
+    "english": "10000000"
+  },
+  "0032": {
+    "id": 32,
+    "arabic": "ا",
+    "english": "alif"
+  },
+  "0033": {
+    "id": 33,
+    "arabic": "ب",
+    "english": "baa"
+  },
+  "0034": {
+    "id": 34,
+    "arabic": "ت",
+    "english": "ta"
+  },
+  "0035": {
+    "id": 35,
+    "arabic": "ث",
+    "english": "tha"
+  },
+  "0036": {
+    "id": 36,
+    "arabic": "ج",
+    "english": "Jiim"
+  },
+  "0037": {
+    "id": 37,
+    "arabic": "ح",
+    "english": "Haa"
+  },
+  "0038": {
+    "id": 38,
+    "arabic": "خ",
+    "english": "kha"
+  },
+  "0039": {
+    "id": 39,
+    "arabic": "د",
+    "english": "daal"
+  },
+  "0040": {
+    "id": 40,
+    "arabic": "ذ",
+    "english": "thal"
+  },
+  "0041": {
+    "id": 41,
+    "arabic": "ر",
+    "english": "raa"
+  },
+  "0042": {
+    "id": 42,
+    "arabic": "ز",
+    "english": "zay"
+  },
+  "0043": {
+    "id": 43,
+    "arabic": "س",
+    "english": "siin"
+  },
+  "0044": {
+    "id": 44,
+    "arabic": "ش",
+    "english": "shiin"
+  },
+  "0045": {
+    "id": 45,
+    "arabic": "ص",
+    "english": "Saad"
+  },
+  "0046": {
+    "id": 46,
+    "arabic": "ض",
+    "english": "Daad"
+  },
+  "0047": {
+    "id": 47,
+    "arabic": "ط",
+    "english": "Taa"
+  },
+  "0048": {
+    "id": 48,
+    "arabic": "ظ",
+    "english": "Zaa"
+  },
+  "0049": {
+    "id": 49,
+    "arabic": "ع",
+    "english": "Ayn"
+  },
+  "0050": {
+    "id": 50,
+    "arabic": "غ",
+    "english": "ghayn"
+  },
+  "0051": {
+    "id": 51,
+    "arabic": "ف",
+    "english": "faa"
+  },
+  "0052": {
+    "id": 52,
+    "arabic": "ق",
+    "english": "qaaf"
+  },
+  "0053": {
+    "id": 53,
+    "arabic": "ك",
+    "english": "kaaf"
+  },
+  "0054": {
+    "id": 54,
+    "arabic": "ل",
+    "english": "laam"
+  },
+  "0055": {
+    "id": 55,
+    "arabic": "م",
+    "english": "miim"
+  },
+  "0056": {
+    "id": 56,
+    "arabic": "ن",
+    "english": "noon"
+  },
+  "0057": {
+    "id": 57,
+    "arabic": "ه",
+    "english": "haa"
+  },
+  "0058": {
+    "id": 58,
+    "arabic": "و",
+    "english": "waaw"
+  },
+  "0059": {
+    "id": 59,
+    "arabic": "ي",
+    "english": "yaa"
+  },
+  "0060": {
+    "id": 60,
+    "arabic": "ة",
+    "english": "taa marbuuTa"
+  },
+  "0061": {
+    "id": 61,
+    "arabic": "أ",
+    "english": "alif with hamza above"
+  },
+  "0062": {
+    "id": 62,
+    "arabic": "ؤ",
+    "english": "Waaw with hamza"
+  },
+  "0063": {
+    "id": 63,
+    "arabic": "ئ",
+    "english": "Alif maqsoura with hamza"
+  },
+  "0064": {
+    "id": 64,
+    "arabic": "ئـ",
+    "english": "hamza on line"
+  },
+  "0065": {
+    "id": 65,
+    "arabic": "ء",
+    "english": "hamza"
+  },
+  "0066": {
+    "id": 66,
+    "arabic": "إ",
+    "english": "alif with hamza below"
+  },
+  "0067": {
+    "id": 67,
+    "arabic": "آ",
+    "english": "ALif with maad"
+  },
+  "0068": {
+    "id": 68,
+    "arabic": "ى",
+    "english": "Alif maqsoura"
+  },
+  "0069": {
+    "id": 69,
+    "arabic": "لا",
+    "english": "laam Alif"
+  },
+  "0070": {
+    "id": 70,
+    "arabic": "ال",
+    "english": "Al"
+  },
+  "0071": {
+    "id": 71,
+    "arabic": "هيكل عظمي",
+    "english": "Skeleton"
+  },
+  "0072": {
+    "id": 72,
+    "arabic": "جمجة",
+    "english": "skull"
+  },
+  "0073": {
+    "id": 73,
+    "arabic": "عمود فقري",
+    "english": "Backbone"
+  },
+  "0074": {
+    "id": 74,
+    "arabic": "قفص صدري",
+    "english": "Chest"
+  },
+  "0075": {
+    "id": 75,
+    "arabic": "جهاز تنفسي",
+    "english": "Respiratory device"
+  },
+  "0076": {
+    "id": 76,
+    "arabic": "قصبة هوائية",
+    "english": "Trachea"
+  },
+  "0077": {
+    "id": 77,
+    "arabic": "رئتان",
+    "english": "lungs"
+  },
+  "0078": {
+    "id": 78,
+    "arabic": "شهيق - زفير",
+    "english": "Ins and Outs"
+  },
+  "0079": {
+    "id": 79,
+    "arabic": "جهاز هضمي",
+    "english": "digestive system"
+  },
+  "0080": {
+    "id": 80,
+    "arabic": "وجه",
+    "english": "Face"
+  },
+  "0081": {
+    "id": 81,
+    "arabic": "بلعوم",
+    "english": "pharynx"
+  },
+  "0082": {
+    "id": 82,
+    "arabic": "كبد",
+    "english": "liver"
+  },
+  "0083": {
+    "id": 83,
+    "arabic": "البنكرياس",
+    "english": "pancreas"
+  },
+  "0084": {
+    "id": 84,
+    "arabic": "الأمعاء الدقيقة",
+    "english": "Small intestine"
+  },
+  "0085": {
+    "id": 85,
+    "arabic": "الأمعاء الغليظة",
+    "english": "Large intestine"
+  },
+  "0086": {
+    "id": 86,
+    "arabic": "الزائدة الدودية",
+    "english": "Appendix"
+  },
+  "0087": {
+    "id": 87,
+    "arabic": "جهاز عصبي",
+    "english": "nervous system"
+  },
+  "0088": {
+    "id": 88,
+    "arabic": "قلب",
+    "english": "heart"
+  },
+  "0089": {
+    "id": 89,
+    "arabic": "حواس خمس",
+    "english": "five senses"
+  },
+  "0090": {
+    "id": 90,
+    "arabic": "عضلة",
+    "english": "muscle"
+  },
+  "0091": {
+    "id": 91,
+    "arabic": "أنسجة",
+    "english": "tissue"
+  },
+  "0092": {
+    "id": 92,
+    "arabic": "مستشفى",
+    "english": "hospital"
+  },
+  "0093": {
+    "id": 93,
+    "arabic": "إسعافات أولية",
+    "english": "first aid"
+  },
+  "0094": {
+    "id": 94,
+    "arabic": "جرح نازف",
+    "english": "wound"
+  },
+  "0095": {
+    "id": 95,
+    "arabic": "حروق",
+    "english": "burning"
+  },
+  "0096": {
+    "id": 96,
+    "arabic": "مخدر/ بنج",
+    "english": "anesthetist"
+  },
+  "0097": {
+    "id": 97,
+    "arabic": "عملية جراحية",
+    "english": "surgery"
+  },
+  "0098": {
+    "id": 98,
+    "arabic": "شاش / ضمادة",
+    "english": "gauze"
+  },
+  "0099": {
+    "id": 99,
+    "arabic": "شريط لاصق / بلاستر",
+    "english": "adhesive tape"
+  },
+  "0100": {
+    "id": 100,
+    "arabic": "صيدلية",
+    "english": "pharmacy"
+  }
+}

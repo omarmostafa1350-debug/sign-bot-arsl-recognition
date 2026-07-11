@@ -1,0 +1,173 @@
+# Sign-Bot Architecture Diagrams: PlantUML Source Code
+
+This file compiles the raw PlantUML definitions for 3 key diagrams:
+1. High-Level Component Diagram
+2. Module Structure Class Diagram
+3. Runtime Execution Sequence Diagram
+
+You can copy and paste these definitions directly into any PlantUML editor (such as [PlantText](https://www.planttext.com) or a local PlantUML engine).
+
+---
+
+## 1. High-Level Component Diagram (Artifact 11)
+
+```plantuml
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Courier"
+
+package "Dataset Engineering Phase (Local Mac CPU)" {
+  [KArSL Raw Videos] --> [extract_hands.py]
+  [extract_hands.py] --> [preprocessing.py] : applies normalization
+  [extract_hands.py] --> [Individual .npy Arrays]
+  [Individual .npy Arrays] --> [build_dataset.py]
+  [build_dataset.py] --> [signbot_colab_package.zip]
+}
+
+package "Model Development Phase (Colab T4 GPU)" {
+  [signbot_colab_package.zip] --> [train_production_model.py]
+  [train_production_model.py] --> [signbot_production_best.h5]
+  [signbot_production_best.h5] --> [convert_tflite_simple.py]
+  [convert_tflite_simple.py] --> [signbot_production.tflite]
+}
+
+package "Deployment Real-Time Phase (Raspberry Pi 4 CPU)" {
+  [signbot_production.tflite] --> [TFLite Runtime Interpreter]
+  [Webcam Stream] --> [MediaPipe Hands C++]
+  [MediaPipe Hands C++] --> [preprocessing.py]
+  [preprocessing.py] --> [sliding_window_buffer]
+  [sliding_window_buffer] --> [TFLite Runtime Interpreter]
+  [TFLite Runtime Interpreter] --> [arabic_reshaper & python-bidi]
+  [arabic_reshaper & python-bidi] --> [PIL overlay engine]
+  [PIL overlay engine] --> [PyQt5 Display GUI]
+}
+@endum
+```
+
+---
+
+## 2. Module Structure Class Diagram (Artifact 2)
+
+```plantuml
+@startuml
+skinparam class {
+  BackgroundColor White
+  ArrowColor Black
+  BorderColor Black
+}
+skinparam shadowing false
+skinparam defaultFontName "Courier"
+
+class ConfigTraining {
+  + String SSD_ROOT
+  + String NPY_DIR
+  + String DATASET_DIR
+  + int NUM_CLASSES = 100
+  + int MAX_SEQUENCE_LENGTH = 20
+  + int FRAME_WIDTH = 320
+  + int FRAME_HEIGHT = 240
+  + int MODEL_COMPLEXITY = 0
+  + float MIN_DETECTION_CONFIDENCE = 0.6
+  + float MIN_TRACKING_CONFIDENCE = 0.5
+}
+
+class PreprocessingCore {
+  + float[] normalize_hand_landmarks(float[] hand_row)
+  + float[] normalize_frame(float[] frame_hands)
+  + float[][] normalize_sequence(float[][] seq_hands)
+}
+
+class ExtractHands {
+  + List find_videos()
+  + float[][] extract_landmarks_from_video(String video_path, Hands detector)
+}
+
+class BuildDataset {
+  + float[][] pad_or_truncate(float[][] sequence, int max_len)
+  + List collect_samples()
+  + tuple build_arrays(List samples)
+}
+
+class ConvertTfliteSimple {
+  + Model load_model()
+  + dict _strip_quantization_config(dict obj)
+}
+
+class TestWebcamLive {
+  + Mat draw_text(Mat frame_bgr, String text, Point position)
+  + tuple extract_and_normalize_hands(results)
+}
+
+ConfigTraining <.. ExtractHands : references
+ConfigTraining <.. BuildDataset : references
+PreprocessingCore <.. BuildDataset : uses
+PreprocessingCore <.. TestWebcamLive : uses
+ConvertTfliteSimple ..> ConfigTraining : references
+@endum
+```
+
+---
+
+## 3. Runtime Execution Sequence Diagram (Artifact 5)
+
+```plantuml
+@startuml
+skinparam participant {
+  BackgroundColor White
+  BorderColor Black
+  ArrowColor Black
+}
+skinparam actor {
+  BackgroundColor White
+  BorderColor Black
+}
+skinparam sequence {
+  ArrowColor Black
+  ActorBorderColor Black
+  LifeLineBorderColor Black
+  LifeLineBackgroundColor White
+}
+skinparam shadowing false
+skinparam defaultFontName "Courier"
+
+actor User
+participant "Camera Hardware" as Cam
+participant "MediaPipe Detector" as MP
+participant "Preprocessing Core" as Norm
+database "Sliding Buffer (deque)" as Buff
+participant "TFLite Interpreter (Flex)" as TF
+participant "Arabic Rendering Core" as Rent
+participant "PyQt5 HUD Display" as Display
+
+User -> Cam : Perform sign gesture in camera view
+activate Cam
+Cam -> Cam : Resize raw frame to 320x240
+Cam -> MP : Process Frame RGB
+activate MP
+MP -> Norm : Raw landmarks array (126-dim)
+activate Norm
+Norm -> Norm : Translate & Scale normalization (preprocessing.py)
+Norm -> Buff : Append normalized feature vector
+deactivate Norm
+deactivate MP
+
+alt Buffer size == 20 AND frame_idx % 3 == 0
+  Buff -> TF : Set input tensor [1, 20, 126]
+  activate TF
+  TF -> TF : invoke()
+  TF -> Rent : Softmax output class index & confidence
+  deactivate TF
+  activate Rent
+  Rent -> Rent : Shape Arabic letters (arabic_reshaper)
+  Rent -> Rent : Set layout right-to-left (python-bidi)
+  Rent -> Display : Draw reshaped Arabic text glyphs
+  deactivate Rent
+else Buffer is filling / deque is not full
+  Rent -> Display : Draw "Listening..." status overlay
+end
+
+Display -> User : Video output frame rendered on GUI
+deactivate Cam
+@enduml
+```
