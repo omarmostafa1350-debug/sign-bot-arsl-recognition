@@ -34,6 +34,17 @@ Full evaluation details, confusion matrices, and per-fold reports are in [`docs/
 The gap between same-pool accuracy (96.29%) and cross-signer generalization (36.11%) is the main limitation of the current system. With only three signers in the training set, each LOSO fold trains on just two identities, which gives the model limited pressure to learn signer-invariant representations rather than signer-correlated ones. Reported accuracy applies to the three signers used in this study. Generalization to a new signer has not been established. Expanding the training population to 5-6 signers is the primary direction for future work.
 
 ## Repository Structure
+
+```
+sign-bot-arsl-recognition/
+├── src/          # Application code: entry point, vision, voice (STT/TTS), UI, hardware control
+├── model/        # Deployed TFLite model, class labels
+├── training/     # Dataset building, MediaPipe extraction, training, LOSO CV, TFLite conversion
+├── docs/         # Architecture docs, evaluation results, handoff notes
+├── deployment/   # systemd service file for auto-start on the Pi
+└── images/       # Screenshots, landmark visualizations
+```
+
 ## Setup
 
 ```bash
