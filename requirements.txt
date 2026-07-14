@@ -1,0 +1,10 @@
+PyQt5==5.15.11
+opencv-python==5.0.0.93
+mediapipe
+numpy
+tensorflow
+requests==2.34.2
+vosk==0.3.45
+SpeechRecognition==3.17.0
+openai==2.45.0
+RPi.GPIO
