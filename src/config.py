@@ -67,7 +67,8 @@ OPENAI_API_KEY = ""
 # Google Cloud Speech-to-Text API key — only needed if STT_ENGINE = "google_cloud"
 # Enable the "Cloud Speech-to-Text API" in Google Cloud Console, then create an
 # API key under APIs & Services → Credentials and paste it here.
-GOOGLE_CLOUD_API_KEY = os.environ.get("GOOGLE_CLOUD_API_KEY", "")
+GOOGLE_CLOUD_API_KEY =os.environ.get("GOOGLE_CLOUD_API_KEY", "")
+
 
 # How long a single captured utterance can be, and how long to wait for
 # speech to start before looping (also the max delay before stop() takes effect)
